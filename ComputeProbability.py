@@ -39,12 +39,12 @@ def outputData():
 	global first_ball_numbers, second_ball_numbres
 	with open('data3.csv', 'w', newline='') as csvfile:
 		# 將 dictionary 寫入 CSV 檔
-  		writer = csv.DictWriter(csvfile, fieldnames=first_ball_numbers.keys())
+		writer = csv.DictWriter(csvfile, fieldnames=first_ball_numbers.keys())
   		# 寫入第一列的欄位名稱
 		writer.writeheader()
   		# 寫入資料
-  		writer.writerow(first_ball_numbers)
-  		writer.writerow(second_ball_numbres)
+		writer.writerow(first_ball_numbers)
+		writer.writerow(second_ball_numbres)
 
 #計算機率
 def computeProbability(row_data, x):

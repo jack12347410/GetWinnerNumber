@@ -31,14 +31,14 @@ def computeNumbers(row_data):
 def outputData():
 	with open('data2.csv', 'w', newline='') as csvfile:
 		# 將 dictionary 寫入 CSV 檔
-  		writer = csv.DictWriter(csvfile, fieldnames=first_ball_numbers.keys())
-  		# 寫入第一列的欄位名稱
-  		writer.writeheader()
+		writer = csv.DictWriter(csvfile, fieldnames=first_ball_numbers.keys())
+		# 寫入第一列的欄位名稱
+		writer.writeheader()
   		# 寫入資料
-  		writer.writerow(first_ball_numbers)
-  		writer.writerow(second_ball_numbres)
-  		print(first_ball_numbers)
-  		print(second_ball_numbres)
+		writer.writerow(first_ball_numbers)
+		writer.writerow(second_ball_numbres)
+		print(first_ball_numbers)
+		print(second_ball_numbres)
 
 def convertData():
 	for index in range(first_number_range):

@@ -52,11 +52,11 @@ def searchData(driver):
 def outputData():
 	with open('Test1.csv', 'w', newline='') as csvfile:
 		# 將 dictionary 寫入 CSV 檔
-  		writer = csv.DictWriter(csvfile, fieldnames=SuperLottoKey)
-  		# 寫入第一列的欄位名稱
-  		writer.writeheader()
+		writer = csv.DictWriter(csvfile, fieldnames=SuperLottoKey)
+		# 寫入第一列的欄位名稱
+		writer.writeheader()
   		# 寫入資料
-  		for data in SuperLotto.values():
+		for data in SuperLotto.values():
   			#print(data)
   			writer.writerow(data)
 
@@ -70,16 +70,15 @@ def setData(key):
 if __name__ == '__main__':
 	#print(type(SuperLottoDate['108']))
     # 加啟動配置
-    driver = openChrome()
-
-    try:
-    	for x in range(len(SuperLottoDate)):
-    		nextDate = NowDate - x
-    		key = nextDate*1000000 + SuperLottoDate[str(nextDate)]
-    		for y in range(SuperLottoDate[str(nextDate)]):
-    			nextKey = key - y
-    			operationAuth(driver, nextKey)
-    			setData(nextKey)
-    	outputData()
-    finally:
-    	closeChrome(driver)
+	driver = openChrome()
+	try:
+		for x in range(len(SuperLottoDate)):
+			nextDate = NowDate - x
+			key = nextDate*1000000 + SuperLottoDate[str(nextDate)]
+			for y in range(SuperLottoDate[str(nextDate)]):
+				nextKey = key - y
+				operationAuth(driver, nextKey)
+				setData(nextKey)
+		outputData()
+	finally:
+		closeChrome(driver)

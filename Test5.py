@@ -60,11 +60,11 @@ def is_element_exist(driver, css):
 
 # 方法主入口
 if __name__ == '__main__':
-	 driver = openChrome()
-	 try:
-	 	for y in range(110):
-	 		nextKey = 108000110 - y
-	 		print(nextKey)
-	 		operationAuth(driver, nextKey)
-	 finally:
+	driver = openChrome()
+	try:
+		for y in range(110):
+			nextKey = 108000110 - y
+			print(nextKey)
+			operationAuth(driver, nextKey)
+	finally:
 	 	closeChrome(driver)
